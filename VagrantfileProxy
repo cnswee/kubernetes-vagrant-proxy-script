@@ -1,0 +1,11 @@
+Vagrant.configure("2") do |config|
+  if Vagrant.has_plugin?("vagrant-proxyconf")
+    config.proxy.http     = ""
+    config.proxy.https    = ""
+    config.proxy.no_proxy = "localhost,.svc,.cluster.local,127.0.0.1,192.168.0.0/16,10.244.0.0/16,10.96.0.0/12,10.0.0.0/16"
+    config.apt_proxy.http = ""
+    config.apt_proxy.https = ""
+    configure_git_proxy = ""
+  end
+  # ... other stuff
+end
